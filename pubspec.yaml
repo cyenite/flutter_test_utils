@@ -1,6 +1,6 @@
 name: flutter_test_utils
 description: A Flutter library that can help simplify writing tests
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/cyenite/flutter_test_utils.git
 
 environment:
