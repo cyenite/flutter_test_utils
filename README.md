@@ -1,4 +1,5 @@
 
+
 # Flutter Test Utils
 
 A set of helper methods for testing widgets in the Flutter framework.
@@ -9,9 +10,11 @@ In your `pubspec.yaml` file, add the following dependency:
 
 
 
-    dependencies:
-    	flutter_test_utils: ^1.0.0 
-
+``` 
+dependencies: 
+    flutter_test_utils: ^1.0.0
+```   
+    
 Then, run `flutter pub get` to install the package.
 
 ## Usage
@@ -29,11 +32,13 @@ This method waits until a widget is found in the widget tree before running test
 
 Example usage:
 
-    testWidgets('Test widget with future', (WidgetTester tester) async { 
-    final widget = MyWidgetWithFuture(); 
-    await FlutterTestUtils.waitForWidget(find.byType(MyWidget), tester);
-    expect(find.byType(MyWidgetWithFuture), findsOneWidget); 
-    });
+```dart  
+testWidgets('Test widget with future', (WidgetTester tester) async { 
+final widget = MyWidgetWithFuture(); 
+await FlutterTestUtils.waitForWidget(find.byType(MyWidget), tester);  
+expect(find.byType(MyWidgetWithFuture), findsOneWidget); 
+});  
+```  
 
 ### `pumpWidgetWithAnimation`
 
@@ -41,54 +46,65 @@ This is a method for testing widget animations. This method wraps the `tester.pu
 
 Example usage:
 
-    testWidgets('Test widget animation', (WidgetTester tester) async { 
-    final widget = MyWidget(); 
-    await FlutterTestUtils.pumpWidgetWithAnimation(widget, tester); 
-    expect(find.byType(MyWidget), findsOneWidget); 
-    });
+```dart  
+testWidgets('Test widget animation', (WidgetTester tester) async { 
+final widget = MyWidget(); 
+await FlutterTestUtils.pumpWidgetWithAnimation(widget, tester); 
+expect(find.byType(MyWidget), findsOneWidget); 
+});  
+```  
 
 ### `testWidgetState`
 Tests the state of a widget after a duration of time. This method wraps the `tester.pumpAndSettle` method with a loop that allows testing the widget state over time.
 
 Example usage:
 
-    testWidgets('Test widget state', (WidgetTester tester) async { 
-    final widget = MyWidget(); 
-    await  FlutterTestUtils.testWidgetState(widget, tester); 
-    expect(find.byType(MyWidget), findsOneWidget); 
-    });
+```dart  
+testWidgets('Test widget state', (WidgetTester tester) async { 
+final widget = MyWidget(); 
+await  FlutterTestUtils.testWidgetState(widget, tester); 
+expect(find.byType(MyWidget), findsOneWidget); 
+});  
+```  
 
 ### `testWidgetTap`
 Tests the behavior of a widget when an item is tapped.
 
 Example usage:
 
-    testWidgets('Test widget tap', (WidgetTester tester) async { 
-    final widget = MyWidget(); 
-    await  FlutterTestUtils.testWidgetTap(widget, tester); 
-    expect(find.byType(MyOtherWidget), findsOneWidget); 
-    });
+```dart  
+testWidgets('Test widget tap', (WidgetTester tester) async { 
+final widget = MyWidget(); 
+await  FlutterTestUtils.testWidgetTap(widget, tester); 
+expect(find.byType(MyOtherWidget), findsOneWidget); 
+});  
+```  
 
 ### `testWidgetLongPress`
 This is a method for testing the behavior of a widget when an item is long-pressed.
 
 Example usage:
 
-    testWidgets('Test widget long press', (WidgetTester tester) async { 
-    final widget = MyWidget(); 
-    await  FlutterTestUtils.testWidgetLongPress(widget, tester); 
-    expect(find.byType(MyOtherWidget), findsOneWidget); 
-    });
+```dart  
+testWidgets('Test widget long press', (WidgetTester tester) async { 
+final widget = MyWidget(); 
+await  FlutterTestUtils.testWidgetLongPress(widget, tester); 
+expect(find.byType(MyOtherWidget), findsOneWidget); 
+});  
+```  
 
 ### `testWidgetScroll`
 This is a method for testing the behavior of a widget when an item is scrolled.
 
 Example usage:
 
-    testWidgets('Test widget scroll', (WidgetTester tester) async { 
-    final widget = MyWidget(); 
-    await  FlutterTestUtils.testWidgetScroll(widget, tester, 100.0); expect(find.byType(MyOtherWidget), findsOneWidget); 
-    });
+```dart  
+testWidgets('Test widget scroll', (WidgetTester tester) async { 
+final widget = MyWidget(); 
+await  FlutterTestUtils.testWidgetScroll(widget, tester, 100.0); 
+expect(find.byType(MyOtherWidget), findsOneWidget); 
+});  
+```  
 
 ### `testWidgetDialog(WidgetTester tester, Finder dialogFinder)`
 
@@ -96,8 +112,10 @@ Tests the presence of a dialog in the widget tree.
 
 Example usage:
 
-    await FlutterTestUtils.testWidgetDialog(tester, find.byType(Dialog));
-    expect(find.byType(Dialog), findsOneWidget);
+```dart  
+await FlutterTestUtils.testWidgetDialog(tester, find.byType(Dialog));  
+expect(find.byType(Dialog), findsOneWidget);  
+```  
 
 ### `testWidgetSnackbar(WidgetTester tester, String snackbarText)`
 
@@ -105,9 +123,11 @@ Tests the presence of a snackbar in the widget tree.
 
 Example usage:
 
-    final snackbarText = 'Snackbar text';
-    await FlutterTestUtils.testWidgetSnackbar(tester, snackbarText);
-    expect(find.text(snackbarText), findsOneWidget);
+```dart  
+final snackbarText = 'Snackbar text';  
+await FlutterTestUtils.testWidgetSnackbar(tester, snackbarText);  
+expect(find.text(snackbarText), findsOneWidget);  
+```  
 
 ### `testWidgetAbsence(WidgetTester tester, Finder widgetFinder)`
 
@@ -116,10 +136,12 @@ Tests the absence of a widget in the widget tree.
 Example usage:
 
 
-    final widget = MyWidget();
-    await tester.pumpWidget(widget);
-    await FlutterTestUtils.testWidgetAbsence(tester, find.byType(SnackBar));
-    expect(find.byType(SnackBar), findsNothing);
+```dart  
+final widget = MyWidget();  
+await tester.pumpWidget(widget);  
+await FlutterTestUtils.testWidgetAbsence(tester, find.byType(SnackBar));  
+expect(find.byType(SnackBar), findsNothing);  
+```  
 
 ## Contributing
 
