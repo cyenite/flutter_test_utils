@@ -10,7 +10,11 @@ In your `pubspec.yaml` file, add the following dependency:
 
 
 
-dependencies: flutter_test_utils: ^1.0.0   
+``` 
+dependencies: 
+    flutter_test_utils: ^1.0.0
+```   
+    
 Then, run `flutter pub get` to install the package.
 
 ## Usage
@@ -30,11 +34,10 @@ Example usage:
 
 ```dart  
 testWidgets('Test widget with future', (WidgetTester tester) async { 
-	final widget = MyWidgetWithFuture(); 
-	await FlutterTestUtils.waitForWidget(find.byType(MyWidget), tester);  
-	expect(find.byType(MyWidgetWithFuture), findsOneWidget); 
-	},
-);  
+final widget = MyWidgetWithFuture(); 
+await FlutterTestUtils.waitForWidget(find.byType(MyWidget), tester);  
+expect(find.byType(MyWidgetWithFuture), findsOneWidget); 
+});  
 ```  
 
 ### `pumpWidgetWithAnimation`
@@ -45,11 +48,10 @@ Example usage:
 
 ```dart  
 testWidgets('Test widget animation', (WidgetTester tester) async { 
-	final widget = MyWidget(); 
-	await FlutterTestUtils.pumpWidgetWithAnimation(widget, tester); 
-	expect(find.byType(MyWidget), findsOneWidget); 
-	},
-);  
+final widget = MyWidget(); 
+await FlutterTestUtils.pumpWidgetWithAnimation(widget, tester); 
+expect(find.byType(MyWidget), findsOneWidget); 
+});  
 ```  
 
 ### `testWidgetState`
@@ -59,11 +61,10 @@ Example usage:
 
 ```dart  
 testWidgets('Test widget state', (WidgetTester tester) async { 
-	final widget = MyWidget(); 
-	await  FlutterTestUtils.testWidgetState(widget, tester); 
-	expect(find.byType(MyWidget), findsOneWidget); 
-	},
-);  
+final widget = MyWidget(); 
+await  FlutterTestUtils.testWidgetState(widget, tester); 
+expect(find.byType(MyWidget), findsOneWidget); 
+});  
 ```  
 
 ### `testWidgetTap`
@@ -73,11 +74,10 @@ Example usage:
 
 ```dart  
 testWidgets('Test widget tap', (WidgetTester tester) async { 
-	final widget = MyWidget(); 
-	await  FlutterTestUtils.testWidgetTap(widget, tester); 
-	expect(find.byType(MyOtherWidget), findsOneWidget); 
-	},
-);  
+final widget = MyWidget(); 
+await  FlutterTestUtils.testWidgetTap(widget, tester); 
+expect(find.byType(MyOtherWidget), findsOneWidget); 
+});  
 ```  
 
 ### `testWidgetLongPress`
@@ -87,11 +87,10 @@ Example usage:
 
 ```dart  
 testWidgets('Test widget long press', (WidgetTester tester) async { 
-	final widget = MyWidget(); 
-	await  FlutterTestUtils.testWidgetLongPress(widget, tester); 
-	expect(find.byType(MyOtherWidget), findsOneWidget); 
-	},
-);  
+final widget = MyWidget(); 
+await  FlutterTestUtils.testWidgetLongPress(widget, tester); 
+expect(find.byType(MyOtherWidget), findsOneWidget); 
+});  
 ```  
 
 ### `testWidgetScroll`
@@ -101,11 +100,10 @@ Example usage:
 
 ```dart  
 testWidgets('Test widget scroll', (WidgetTester tester) async { 
-	final widget = MyWidget(); 
-	await  FlutterTestUtils.testWidgetScroll(widget, tester, 100.0); 
-	expect(find.byType(MyOtherWidget), findsOneWidget); 
-	},
-);  
+final widget = MyWidget(); 
+await  FlutterTestUtils.testWidgetScroll(widget, tester, 100.0); 
+expect(find.byType(MyOtherWidget), findsOneWidget); 
+});  
 ```  
 
 ### `testWidgetDialog(WidgetTester tester, Finder dialogFinder)`
